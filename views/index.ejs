@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <title>Express + Mysql</title>
+  </head>
+  <body>
+    <div class="container py-5 p-lg-5">
+      <h1 class="mb-5"><%= title %></h1>
+
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">nama</th>
+            <th scope="col">kelas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let siswa of mahasiswa) { %>
+          <tr>
+            <th scope="row"><%= siswa.id %></th>
+            <td><%= siswa.nama %></td>
+            <td><%= siswa.kelas %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+
+      <h2 class="mt-5">Tambah Mahasiswa Baru</h2>
+
+      <form action="/" method="post">
+        <div class="mb-3">
+          <label for="nama" class="form-label">Nama</label>
+          <input type="text" class="form-control" id="nama" name="nama" />
+        </div>
+        <div class="mb-3">
+          <label for="kelas" class="form-label">Kelas</label>
+          <input type="Kelas" class="form-control" id="kelas" name="kelas" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
